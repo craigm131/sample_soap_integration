@@ -1,0 +1,106 @@
+{
+  "_comment": "This is the config file for SoapApiIntegrator.php, in json format.  The username and password are the credentials for Home.  They are used to access the API on a mutual users behalf and should be hidden from users.  Craig Millis 01/18/2016",
+  "username": "username",
+  "password": "password",
+  "apis": {
+    "LoadPosting": {
+      "wsdlProduction": "http://webservices.soap.com/V13/Posting/LoadPosting.svc?singlewsdl",
+      "wsdlTest": "http://testws.soap.com:8080/V13/Posting/LoadPosting.svc?singlewsdl",
+      "namespace": "http://www.w3.org/2003/05/soap-envelope",
+      "requests": {
+        "PostLoads": {
+          "databaseRequest": ["LA","LU"],
+          "fieldsComment": "This is used if the fields are NOT json.  It matches the fields from Database, leftside, with Soap fields, rightside.  THESE MUST REMAIN IN ORDER ACCORDING TO DATABASE'S OUTPUT CSV.",
+          "fields": {
+            "Actions": "",
+            "Truck Stop Account": "IntegrationId",
+            "Starting City": "OriginCity",
+            "Starting State": "OriginState",
+            "Destination City": "DestinationCity",
+            "Destination State": "DestinationState",
+            "Distance": "Distance",
+            "Weight": "Weight",
+            "Length": "Length",
+            "Stops": "Stops",
+            "Truck Pay": "PaymentAmount",
+            "P/U Date": "PickUpDate",
+            "P/U Time": "PickUpTime",
+            "Del Date": "DeliveryDate",
+            "Del Time": "DeliveryTime",
+            "Type of Eq": "TypeOfEquipment",
+            "Unique Shipment ID For Spots": "Unique Shipment ID For Spots",
+            "Full or Partial": "IsLoadFull",
+            "Contact": "",
+            "Contact Phone": "",
+            "Quantity": "Quantity",
+            "Pro #": "SpecInfo",
+            "Radius Starting City": "",
+            "Radius Destin City": "",
+            "Percentage Full": "",
+            "Min Miles": "",
+            "Desired Direction": "",
+            "Unique Posting ID": "LoadNumber"
+          }
+        },
+        "DeleteLoadsByLoadNumber": {
+          "databaseRequest": ["LD"],
+          "fieldsComment": "This matches the fields from Database, leftside, with Soap fields, rightside.  THESE MUST REMAIN IN ORDER ACCORDING TO DATABASE'S OUTPUT CSV.",
+          "fields": {
+            "Actions": "",
+            "Truck Stop Account": "IntegrationId",
+            "Starting City": "",
+            "Starting State": "",
+            "Destination City": "",
+            "Destination State": "",
+            "Distance": "",
+            "Weight": "",
+            "Length": "",
+            "Stops": "",
+            "Truck Pay": "",
+            "P/U Date": "",
+            "P/U Time": "",
+            "Del Date": "",
+            "Del Time": "",
+            "Type of Eq": "",
+            "Unique Shipment ID For Spots": "",
+            "Full or Partial": "",
+            "Contact": "",
+            "Contact Phone": "",
+            "Quantity": "",
+            "Pro #": "SpecInfo",
+            "Radius Starting City": "",
+            "Radius Destin City": "",
+            "Percentage Full": "",
+            "Min Miles": "",
+            "Desired Direction": "",
+            "Unique Posting ID": "LoadNumber"
+          }
+        }
+      }
+    },
+    "LoadSearching": {
+      "wsdlProduction": "http://webservices.soap.com/V13/Searching/LoadSearch.svc?singlewsdl",
+      "wsdlTest": "http://testws.soap.com:8080/V13/Searching/LoadSearch.svc?singlewsdl"
+    },
+    "OnBoarding": {
+      "wsdlProduction": "http://support.itsonboarding.com/WebServices/V3/Onboarding/OnBoarding.svc?singlewsdl",
+      "wsdlTest": "http://support.itsonboarding.com/WebServices/V3/Onboarding/OnBoarding.svc?singlewsdl"
+    },
+    "RateMate": {
+      "wsdlProduction": "http://webservices.soap.com/V13/RateMate/RateMate.svc?singlewsdl",
+      "wsdlTest": "http://testws.soap.com:8080/v13/RateMate/RateMate.svc?singlewsdl"
+    },
+    "TruckPosting": {
+      "wsdlProduction": "http://webservices.soap.com/V13/Posting/TruckPosting.svc?singlewsdl",
+      "wsdlTest": "http://testws.soap.com:8080/v13/Posting/TruckPosting.svc?singlewsdl"
+    },
+    "TruckSearching": {
+      "wsdlProduction": "http://webservices.soap.com/V13/Searching/TruckSearch.svc?singlewsdl",
+      "wsdlTest": "http://testws.soap.com:8080/v13/Searching/TruckSearch.svc?singlewsdl"
+    },
+    "Cacci": {
+      "wsdlProduction": "http://webservices.soap.com/V13/CACCI/Report.svc?singlewsdl",
+      "wsdlTest": "http://testws.soap.com:8080/v13/CACCI/Report.svc?singlewsdl"
+    }
+  }
+}
